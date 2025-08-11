@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Government Housing Portal</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="https://res.cloudinary.com/di1wvorf2/image/upload/v1750929050/download_musxay.png" alt="AP Logo" class="nav-logo">
+                <div class="brand-text">
+                    <h2>Housing Portal</h2>
+                    <span>Government of Andhra Pradesh</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="about.html" class="nav-link">
+                    <i class="fas fa-info-circle"></i> About Us
+                </a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        <i class="fas fa-users"></i> Beneficiaries <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="beneficiary-list.html">Beneficiary List</a>
+                        <a href="success-stories.html">Success Stories</a>
+                        <a href="eligibility.html">Eligibility Criteria</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link active">
+                    <i class="fas fa-phone"></i> Contact Us
+                </a>
+                <a href="portal-login.html" class="nav-link">
+                    <i class="fas fa-sign-in-alt"></i> Portal Login
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We're here to help you with your housing needs. Reach out to us through any of the channels below.</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone Numbers</h3>
+                    <div class="contact-details">
+                        <p><strong>Main Office:</strong> +91-1234567890</p>
+                        <p><strong>Helpline:</strong> +91-1234567891</p>
+                        <p><strong>Emergency:</strong> +91-1234567892</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Addresses</h3>
+                    <div class="contact-details">
+                        <p><strong>General:</strong> info@aphc.gov.in</p>
+                        <p><strong>Applications:</strong> applications@aphc.gov.in</p>
+                        <p><strong>Support:</strong> support@aphc.gov.in</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Office Locations</h3>
+                    <div class="contact-details">
+                        <p><strong>Head Office:</strong> Vijayawada, AP</p>
+                        <p><strong>Regional:</strong> Guntur, AP</p>
+                        <p><strong>Branch:</strong> Tirupati, AP</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Working Hours</h3>
+                    <div class="contact-details">
+                        <p><strong>Mon-Fri:</strong> 9:00 AM - 6:00 PM</p>
+                        <p><strong>Saturday:</strong> 9:00 AM - 1:00 PM</p>
+                        <p><strong>Sunday:</strong> Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department Contacts -->
+    <section class="departments">
+        <div class="container">
+            <h2 class="section-title">Department Contacts</h2>
+            <div class="departments-grid">
+                <div class="department-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Housing Applications</h3>
+                    <p>For new housing applications and scheme inquiries</p>
+                    <div class="department-contact">
+                        <p><i class="fas fa-phone"></i> +91-1234567893</p>
+                        <p><i class="fas fa-envelope"></i> housing@aphc.gov.in</p>
+                    </div>
+                </div>
+                <div class="department-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Beneficiary Services</h3>
+                    <p>For existing beneficiaries and status updates</p>
+                    <div class="department-contact">
+                        <p><i class="fas fa-phone"></i> +91-1234567894</p>
+                        <p><i class="fas fa-envelope"></i> beneficiary@aphc.gov.in</p>
+                    </div>
+                </div>
+                <div class="department-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Technical Support</h3>
+                    <p>For website and portal related issues</p>
+                    <div class="department-contact">
+                        <p><i class="fas fa-phone"></i> +91-1234567895</p>
+                        <p><i class="fas fa-envelope"></i> tech@aphc.gov.in</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+        <div class="container">
+            <h2 class="section-title">Send us a Message</h2>
+            <div class="contact-form-container">
+                <form id="contactForm" class="contact-form" action="php/contact.php" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="housing-application">Housing Application</option>
+                            <option value="eligibility">Eligibility Inquiry</option>
+                            <option value="status-update">Status Update</option>
+                            <option value="technical-support">Technical Support</option>
+                            <option value="general-inquiry">General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact -->
+    <section class="emergency-contact">
+        <div class="container">
+            <div class="emergency-content">
+                <h3>Emergency Contact</h3>
+                <p>For urgent housing-related emergencies, please contact our 24/7 helpline:</p>
+                <div class="emergency-number">
+                    <i class="fas fa-phone"></i>
+                    <span>+91-1234567899</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Andhra Pradesh Housing Corporation</h3>
+                    <p>Committed to providing affordable housing solutions for every family in Andhra Pradesh.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="application.html">Apply Now</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="eligibility.html">Eligibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91-1234567890</li>
+                        <li><i class="fas fa-envelope"></i> info@aphc.gov.in</li>
+                        <li><i class="fas fa-map-marker-alt"></i> APHC, Vijayawada, AP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Andhra Pradesh Housing Corporation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/contact.js"></script>
+</body>
+</html>

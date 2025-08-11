@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Housing Portal - Andhra Pradesh</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="https://res.cloudinary.com/di1wvorf2/image/upload/v1750929050/download_musxay.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="https://res.cloudinary.com/di1wvorf2/image/upload/v1750929050/download_musxay.png" alt="AP Logo" class="nav-logo">
+                <div class="brand-text">
+                    <h2>Housing Portal</h2>
+                    <span>Government of Andhra Pradesh</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="about.html" class="nav-link">
+                    <i class="fas fa-info-circle"></i> About Us
+                </a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        <i class="fas fa-users"></i> Beneficiaries <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="beneficiary-list.html">Beneficiary List</a>
+                        <a href="success-stories.html">Success Stories</a>
+                        <a href="eligibility.html">Eligibility Criteria</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">
+                    <i class="fas fa-phone"></i> Contact Us
+                </a>
+                <a href="portal-login.html" class="nav-link">
+                    <i class="fas fa-sign-in-alt"></i> Portal Login
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="https://loremflickr.com/1200/400/house" alt="Housing Background" class="hero-bg-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="leaders-section">
+                <div class="leader">
+                    <img src="https://res.cloudinary.com/di1wvorf2/image/upload/v1751629081/babu_pwh7bk.png" alt="Chandrababu Naidu">
+                    <h4>Chandrababu Naidu</h4>
+                    <p>Chief Minister</p>
+                </div>
+                <div class="leader center-leader">
+                    <img src="https://res.cloudinary.com/di1wvorf2/image/upload/v1751625525/partha_saradhi_mftoqf.png" alt="Partha Sarathi">
+                    <h4>Partha Sarathi</h4>
+                    <p>Housing Minister</p>
+                    <div class="hero-text">
+                        <h1>Andhra Pradesh Housing Corporation</h1>
+                        <p>Building Dreams, Creating Communities</p>
+                        <a href="application.html" class="btn-primary">
+                            Apply Now <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="leader">
+                    <img src="https://res.cloudinary.com/di1wvorf2/image/upload/v1751630314/pawankk_cfs8qf.png" alt="Pawan Kalyan">
+                    <h4>Pawan Kalyan</h4>
+                    <p>Deputy Chief Minister</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-home service-icon"></i>
+                    <h3>Affordable Housing</h3>
+                    <p>Quality homes for low and middle-income families with government subsidies and easy financing options.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-users service-icon"></i>
+                    <h3>Family Support</h3>
+                    <p>Comprehensive support for families including documentation assistance and relocation services.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-shield-alt service-icon"></i>
+                    <h3>Secure Process</h3>
+                    <p>Transparent and secure application process with regular updates and status tracking.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-clock service-icon"></i>
+                    <h3>Quick Processing</h3>
+                    <p>Streamlined application process with faster approval times and minimal documentation.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-award service-icon"></i>
+                    <h3>Quality Assurance</h3>
+                    <p>All housing projects meet government quality standards with modern amenities.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-check-circle service-icon"></i>
+                    <h3>Verified Projects</h3>
+                    <p>Government-approved housing projects with clear legal documentation and ownership.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <h2 class="section-title">Our Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-home stat-icon"></i>
+                    <h3 id="homesBuilt">0</h3>
+                    <p>Homes Built</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users stat-icon"></i>
+                    <h3 id="familiesHelped">0</h3>
+                    <p>Families Helped</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-map-marker-alt stat-icon"></i>
+                    <h3 id="districts">0</h3>
+                    <p>Districts Covered</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-rupee-sign stat-icon"></i>
+                    <h3 id="investment">0</h3>
+                    <p>Crores Invested</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Beneficiaries Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The housing scheme helped our family get our dream home. The process was smooth and transparent."</p>
+                    <div class="testimonial-author">
+                        <strong>Rajesh Kumar</strong>
+                        <span>Vijayawada</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Excellent support from the government. We got our house within the promised timeline."</p>
+                    <div class="testimonial-author">
+                        <strong>Priya Sharma</strong>
+                        <span>Guntur</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Very helpful staff and clear procedures. Highly recommend this housing program."</p>
+                    <div class="testimonial-author">
+                        <strong>Venkat Reddy</strong>
+                        <span>Tirupati</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Andhra Pradesh Housing Corporation</h3>
+                    <p>Committed to providing affordable housing solutions for every family in Andhra Pradesh.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="application.html">Apply Now</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="eligibility.html">Eligibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91-1234567890</li>
+                        <li><i class="fas fa-envelope"></i> info@aphc.gov.in</li>
+                        <li><i class="fas fa-map-marker-alt"></i> APHC, Vijayawada, AP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Andhra Pradesh Housing Corporation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Login - Government Housing Portal</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="login-body">
+    <div class="portal-login-container">
+        <div class="portal-header">
+            <div class="portal-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h1>Portal Login</h1>
+            <p>Choose your portal to access the housing management system</p>
+        </div>
+
+        <!-- Portal Selection -->
+        <div class="portal-grid">
+            <a href="admin-login.html" class="portal-card admin-portal">
+                <div class="portal-card-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Admin Portal</h3>
+                <p>For administrators and management staff</p>
+                <div class="portal-btn">
+                    Access Portal <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <a href="worker-login.html" class="portal-card worker-portal">
+                <div class="portal-card-icon">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <h3>Worker Portal</h3>
+                <p>For field workers and support staff</p>
+                <div class="portal-btn">
+                    Access Portal <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <a href="#" class="portal-card beneficiary-portal">
+                <div class="portal-card-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Beneficiary Portal</h3>
+                <p>For housing scheme beneficiaries</p>
+                <div class="portal-btn">
+                    Access Portal <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Quick Access Form -->
+        <div class="quick-access">
+            <h2>Quick Access</h2>
+            <p>Login directly if you know your portal type</p>
+            
+            <form id="quickLoginForm" class="quick-login-form">
+                <div class="form-group">
+                    <label for="portalType">Portal Type</label>
+                    <select id="portalType" name="portalType" required>
+                        <option value="">Select Portal Type</option>
+                        <option value="admin">Admin Portal</option>
+                        <option value="worker">Worker Portal</option>
+                        <option value="beneficiary">Beneficiary Portal</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username / ID</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="password" name="password" required>
+                        <button type="button" class="password-toggle" onclick="togglePassword('password')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login" disabled>Sign In</button>
+            </form>
+
+            <div class="help-links">
+                <a href="#">Forgot your password?</a>
+                <p>Need help? Contact support at <a href="mailto:support@aphc.gov.in">support@aphc.gov.in</a></p>
+            </div>
+        </div>
+
+        <!-- Security Notice -->
+        <div class="security-notice">
+            <i class="fas fa-shield-alt"></i>
+            <p>This is a secure government portal. All activities are monitored and logged for security purposes.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="portal-footer">
+            <p>Andhra Pradesh Housing Corporation</p>
+            <small>&copy; 2025 Government of Andhra Pradesh. All rights reserved.</small>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/portal-login.js"></script>
+</body>
+</html>
