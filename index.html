@@ -29,12 +29,13 @@
                 </a>
                 <div class="dropdown">
                     <a href="#" class="nav-link dropdown-toggle">
-                        <i class="fas fa-users"></i> Beneficiaries <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-cogs"></i> Services <i class="fas fa-chevron-down"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="beneficiary-list.html">Beneficiary List</a>
-                        <a href="success-stories.html">Success Stories</a>
+                        <a href="new-registration.html">New Registration</a>
+                        <a href="application-status.html">Application Status</a>
                         <a href="eligibility.html">Eligibility Criteria</a>
+                        <a href="download-form.html">Download Application Form</a>
                     </div>
                 </div>
                 <a href="contact.html" class="nav-link">
@@ -55,9 +56,56 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background">
-            <img src="https://loremflickr.com/1200/400/house" alt="Housing Background" class="hero-bg-img">
-            <div class="hero-overlay"></div>
+        <div class="hero-carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop" alt="Modern Housing Complex">
+                    <div class="carousel-overlay"></div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop" alt="Affordable Housing">
+                    <div class="carousel-overlay"></div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop" alt="Community Housing">
+                    <div class="carousel-overlay"></div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop" alt="Family Housing">
+                    <div class="carousel-overlay"></div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop" alt="Government Housing">
+                    <div class="carousel-overlay"></div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop" alt="Housing Development">
+                    <div class="carousel-overlay"></div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop" alt="Dream Home">
+                    <div class="carousel-overlay"></div>
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <button class="carousel-btn prev" onclick="changeSlide(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next" onclick="changeSlide(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <span class="indicator active" onclick="currentSlide(1)"></span>
+                    <span class="indicator" onclick="currentSlide(2)"></span>
+                    <span class="indicator" onclick="currentSlide(3)"></span>
+                    <span class="indicator" onclick="currentSlide(4)"></span>
+                    <span class="indicator" onclick="currentSlide(5)"></span>
+                    <span class="indicator" onclick="currentSlide(6)"></span>
+                    <span class="indicator" onclick="currentSlide(7)"></span>
+                </div>
+            </div>
         </div>
         <div class="hero-content">
             <div class="leaders-section">
@@ -150,6 +198,71 @@
                     <i class="fas fa-rupee-sign stat-icon"></i>
                     <h3 id="investment">0</h3>
                     <p>Crores Invested</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process Video Section -->
+    <section class="application-process">
+        <div class="container">
+            <div class="process-content">
+                <div class="process-text">
+                    <h2>How to Apply for Housing</h2>
+                    <p>Follow these simple steps to apply for your dream home through our government housing scheme.</p>
+                    
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Register Online</h4>
+                                <p>Fill out the online registration form with your personal details and documents.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Verify Documents</h4>
+                                <p>Upload required documents and verify your identity through OTP.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Pay Application Fee</h4>
+                                <p>Complete the payment process through our secure payment gateway.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Track Application</h4>
+                                <p>Monitor your application status and receive updates via SMS and email.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="new-registration.html" class="btn-primary">
+                        Start Application <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="process-video">
+                    <div class="video-container">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                            <h3>Watch Application Process</h3>
+                            <p>Step-by-step guide to apply for housing</p>
+                        </div>
+                        <!-- In a real application, replace with actual video -->
+                        <video controls poster="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop">
+                            <source src="#" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
             </div>
         </div>

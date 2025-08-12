@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Challan - Government Housing Portal</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="https://res.cloudinary.com/di1wvorf2/image/upload/v1750929050/download_musxay.png" alt="AP Logo" class="nav-logo">
+                <div class="brand-text">
+                    <h2>Housing Portal</h2>
+                    <span>Government of Andhra Pradesh</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Challan Section -->
+    <section class="challan-section">
+        <div class="container">
+            <div class="challan-header">
+                <i class="fas fa-receipt challan-icon"></i>
+                <h1>Payment Challan</h1>
+                <p>Complete your housing application payment</p>
+            </div>
+
+            <div class="challan-container">
+                <!-- User Details -->
+                <div class="challan-details">
+                    <h2>Application Details</h2>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <label>Application ID:</label>
+                            <span id="applicationId">APP2025000001</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Full Name:</label>
+                            <span id="applicantName">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Phone Number:</label>
+                            <span id="phoneNumber">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Email:</label>
+                            <span id="email">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>District:</label>
+                            <span id="district">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Application Date:</label>
+                            <span id="applicationDate">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Details -->
+                <div class="payment-details">
+                    <h2>Payment Information</h2>
+                    <div class="payment-breakdown">
+                        <div class="payment-item">
+                            <span>Application Processing Fee</span>
+                            <span>₹500.00</span>
+                        </div>
+                        <div class="payment-item">
+                            <span>Document Verification Fee</span>
+                            <span>₹200.00</span>
+                        </div>
+                        <div class="payment-item">
+                            <span>Service Charges</span>
+                            <span>₹50.00</span>
+                        </div>
+                        <div class="payment-item total">
+                            <span><strong>Total Amount</strong></span>
+                            <span><strong>₹750.00</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="payment-methods">
+                    <h2>Choose Payment Method</h2>
+                    <div class="payment-options">
+                        <div class="payment-option" onclick="selectPaymentMethod('debit')">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Debit Card</span>
+                        </div>
+                        <div class="payment-option" onclick="selectPaymentMethod('credit')">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Credit Card</span>
+                        </div>
+                        <div class="payment-option" onclick="selectPaymentMethod('upi')">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>UPI</span>
+                        </div>
+                        <div class="payment-option" onclick="selectPaymentMethod('netbanking')">
+                            <i class="fas fa-university"></i>
+                            <span>Net Banking</span>
+                        </div>
+                        <div class="payment-option" onclick="selectPaymentMethod('qr')">
+                            <i class="fas fa-qrcode"></i>
+                            <span>QR Code</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Form -->
+                <div class="payment-form-container" id="paymentFormContainer" style="display: none;">
+                    <form id="paymentForm" class="payment-form">
+                        <!-- Card Payment Form -->
+                        <div id="cardForm" class="payment-form-section" style="display: none;">
+                            <h3>Card Details</h3>
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number</label>
+                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiryDate">Expiry Date</label>
+                                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cardName">Cardholder Name</label>
+                                <input type="text" id="cardName" name="cardName" placeholder="Name on Card">
+                            </div>
+                        </div>
+
+                        <!-- UPI Form -->
+                        <div id="upiForm" class="payment-form-section" style="display: none;">
+                            <h3>UPI Payment</h3>
+                            <div class="form-group">
+                                <label for="upiId">UPI ID</label>
+                                <input type="text" id="upiId" name="upiId" placeholder="yourname@upi">
+                            </div>
+                        </div>
+
+                        <!-- Net Banking Form -->
+                        <div id="netbankingForm" class="payment-form-section" style="display: none;">
+                            <h3>Select Your Bank</h3>
+                            <div class="form-group">
+                                <select id="bankSelect" name="bankSelect">
+                                    <option value="">Choose Bank</option>
+                                    <option value="sbi">State Bank of India</option>
+                                    <option value="hdfc">HDFC Bank</option>
+                                    <option value="icici">ICICI Bank</option>
+                                    <option value="axis">Axis Bank</option>
+                                    <option value="pnb">Punjab National Bank</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- QR Code -->
+                        <div id="qrForm" class="payment-form-section" style="display: none;">
+                            <h3>Scan QR Code</h3>
+                            <div class="qr-container">
+                                <div class="qr-code">
+                                    <i class="fas fa-qrcode"></i>
+                                    <p>Scan with any UPI app</p>
+                                </div>
+                                <p>Amount: ₹750.00</p>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary payment-btn">
+                            <i class="fas fa-lock"></i> Pay ₹750.00
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Success Modal -->
+    <div id="paymentSuccessModal" class="modal">
+        <div class="modal-content">
+            <div class="success-content">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h2>Payment Successful!</h2>
+                <p>Your payment has been processed successfully.</p>
+                
+                <div class="receipt-details">
+                    <h3>Payment Receipt</h3>
+                    <div class="receipt-info">
+                        <div class="receipt-item">
+                            <span>Transaction ID:</span>
+                            <span id="transactionId">TXN123456789</span>
+                        </div>
+                        <div class="receipt-item">
+                            <span>Amount Paid:</span>
+                            <span>₹750.00</span>
+                        </div>
+                        <div class="receipt-item">
+                            <span>Payment Date:</span>
+                            <span id="paymentDate"></span>
+                        </div>
+                        <div class="receipt-item">
+                            <span>Status:</span>
+                            <span class="status-success">Success</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="receipt-actions">
+                    <button onclick="downloadReceipt()" class="btn-primary">
+                        <i class="fas fa-download"></i> Download Receipt
+                    </button>
+                    <button onclick="window.location.href='index.html'" class="btn-secondary">
+                        <i class="fas fa-home"></i> Go to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/challan.js"></script>
+</body>
+</html>

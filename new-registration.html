@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Registration - Government Housing Portal</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="https://res.cloudinary.com/di1wvorf2/image/upload/v1750929050/download_musxay.png" alt="AP Logo" class="nav-logo">
+                <div class="brand-text">
+                    <h2>Housing Portal</h2>
+                    <span>Government of Andhra Pradesh</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="about.html" class="nav-link">
+                    <i class="fas fa-info-circle"></i> About Us
+                </a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active">
+                        <i class="fas fa-cogs"></i> Services <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="new-registration.html" class="active">New Registration</a>
+                        <a href="application-status.html">Application Status</a>
+                        <a href="eligibility.html">Eligibility Criteria</a>
+                        <a href="download-form.html">Download Application Form</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">
+                    <i class="fas fa-phone"></i> Contact Us
+                </a>
+                <a href="portal-login.html" class="nav-link">
+                    <i class="fas fa-sign-in-alt"></i> Portal Login
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Form Section -->
+    <section class="registration-section">
+        <div class="container">
+            <div class="registration-header">
+                <i class="fas fa-user-plus registration-icon"></i>
+                <h1>New Housing Registration</h1>
+                <p>Register for government housing scheme by filling out the form below</p>
+            </div>
+
+            <div class="registration-form-container">
+                <div class="form-header">
+                    <h2>Personal Information</h2>
+                    <p>Please provide accurate information for verification</p>
+                </div>
+
+                <form id="registrationForm" class="registration-form" action="php/submit_registration.php" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">
+                                <i class="fas fa-user"></i> Full Name
+                            </label>
+                            <input type="text" id="fullName" name="fullName" required>
+                            <span class="error-message" id="fullNameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="fatherName">
+                                <i class="fas fa-male"></i> Father's Name
+                            </label>
+                            <input type="text" id="fatherName" name="fatherName" required>
+                            <span class="error-message" id="fatherNameError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="aadharNumber">
+                                <i class="fas fa-id-card"></i> Aadhar Number
+                            </label>
+                            <input type="text" id="aadharNumber" name="aadharNumber" maxlength="14" required>
+                            <span class="error-message" id="aadharError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">
+                                <i class="fas fa-phone"></i> Phone Number
+                            </label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" maxlength="10" required>
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i> Email Address
+                        </label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="constitution">
+                                <i class="fas fa-users"></i> Constitution
+                            </label>
+                            <select id="constitution" name="constitution" required>
+                                <option value="">Select Constitution</option>
+                                <option value="individual">Individual</option>
+                                <option value="joint">Joint Family</option>
+                                <option value="society">Society</option>
+                                <option value="trust">Trust</option>
+                            </select>
+                            <span class="error-message" id="constitutionError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">
+                                <i class="fas fa-map"></i> State
+                            </label>
+                            <select id="state" name="state" required>
+                                <option value="">Select State</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            </select>
+                            <span class="error-message" id="stateError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="district">
+                                <i class="fas fa-map-marker-alt"></i> District
+                            </label>
+                            <select id="district" name="district" required>
+                                <option value="">Select District</option>
+                                <option value="Anantapur">Anantapur</option>
+                                <option value="Chittoor">Chittoor</option>
+                                <option value="East Godavari">East Godavari</option>
+                                <option value="Guntur">Guntur</option>
+                                <option value="Krishna">Krishna</option>
+                                <option value="Kurnool">Kurnool</option>
+                                <option value="Nellore">Nellore</option>
+                                <option value="Prakasam">Prakasam</option>
+                                <option value="Srikakulam">Srikakulam</option>
+                                <option value="Visakhapatnam">Visakhapatnam</option>
+                                <option value="Vizianagaram">Vizianagaram</option>
+                                <option value="West Godavari">West Godavari</option>
+                                <option value="YSR Kadapa">YSR Kadapa</option>
+                            </select>
+                            <span class="error-message" id="districtError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">
+                                <i class="fas fa-city"></i> City
+                            </label>
+                            <input type="text" id="city" name="city" required>
+                            <span class="error-message" id="cityError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="mandal">
+                                <i class="fas fa-building"></i> Mandal
+                            </label>
+                            <input type="text" id="mandal" name="mandal" required>
+                            <span class="error-message" id="mandalError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="village">
+                                <i class="fas fa-home"></i> Village
+                            </label>
+                            <input type="text" id="village" name="village" required>
+                            <span class="error-message" id="villageError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pincode">
+                            <i class="fas fa-map-pin"></i> Pincode
+                        </label>
+                        <input type="text" id="pincode" name="pincode" maxlength="6" required>
+                        <span class="error-message" id="pincodeError"></span>
+                    </div>
+
+                    <!-- OTP Section (Initially Hidden) -->
+                    <div class="form-group otp-section" id="otpSection" style="display: none;">
+                        <label for="otp">
+                            <i class="fas fa-mobile-alt"></i> OTP Verification
+                        </label>
+                        <input type="text" id="otp" name="otp" maxlength="6" placeholder="Enter 6-digit OTP">
+                        <button type="button" id="resendOtp" class="btn-secondary">Resend OTP</button>
+                        <span class="error-message" id="otpError"></span>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Important Information</h3>
+                        <ul>
+                            <li><i class="fas fa-arrow-right"></i> Ensure all information is accurate and matches your documents</li>
+                            <li><i class="fas fa-arrow-right"></i> You will receive OTP on your registered mobile number</li>
+                            <li><i class="fas fa-arrow-right"></i> After verification, you will be redirected to payment page</li>
+                            <li><i class="fas fa-arrow-right"></i> Keep your payment receipt for future reference</li>
+                        </ul>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="sendOtpBtn" class="btn-secondary">Send OTP</button>
+                        <button type="submit" id="submitBtn" class="btn-primary" disabled>Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/registration.js"></script>
+</body>
+</html>

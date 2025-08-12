@@ -17,6 +17,7 @@ try {
     $phoneNumber = sanitizeInput($input['phoneNumber'] ?? '');
     $aadharNumber = sanitizeInput($input['aadharNumber'] ?? '');
     $isResend = isset($input['resend']) && $input['resend'] === true;
+    $purpose = sanitizeInput($input['purpose'] ?? 'application');
     
     // Validate phone number
     if (!validatePhone($phoneNumber)) {
@@ -55,7 +56,7 @@ try {
     $stmt->execute([
         $phoneNumber, 
         $otp, 
-        $_SERVER['REMOTE_ADDR'] ?? 'unknown'
+        $purpose,
     ]);
     
     // Send OTP via SMS (implement actual SMS sending)
@@ -85,29 +86,30 @@ try {
 
 function sendOTPSMS($phoneNumber, $otp) {
     // In a real application, integrate with SMS gateway like Twilio, MSG91, etc.
-    // For demonstration, we'll simulate SMS sending
+    // For testing, log the OTP to console/file
+    error_log("OTP for $phoneNumber: $otp");
     
     $message = "Your OTP for housing application is: $otp. Valid for " . OTP_EXPIRY_MINUTES . " minutes. Do not share with anyone. -AP Housing Corporation";
     
-    // Simulate SMS sending (replace with actual SMS API call)
-    error_log("SMS would be sent to $phoneNumber: $message");
+    // For testing purposes, always return true
+    // In production, implement actual SMS gateway integration
     
-    // Example SMS API call (uncomment and modify for actual implementation):
+    // Example with a test SMS service (uncomment for actual implementation):
     /*
+    $apiKey = 'your-sms-api-key';
+    $senderId = 'APHC';
+    
     $curl = curl_init();
     curl_setopt_array($curl, [
-        CURLOPT_URL => SMS_API_URL,
+        CURLOPT_URL => 'https://api.textlocal.in/send/',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_POST => true,
-        CURLOPT_POSTFIELDS => json_encode([
-            'apikey' => SMS_API_KEY,
+        CURLOPT_POSTFIELDS => http_build_query([
+            'apikey' => $apiKey,
             'numbers' => $phoneNumber,
             'message' => $message,
-            'sender' => 'APHC'
-        ]),
-        CURLOPT_HTTPHEADER => [
-            'Content-Type: application/json'
-        ]
+            'sender' => $senderId
+        ])
     ]);
     
     $response = curl_exec($curl);
@@ -117,7 +119,7 @@ function sendOTPSMS($phoneNumber, $otp) {
     return $httpCode === 200;
     */
     
-    // For demonstration, always return true
+    // For testing, always return true
     return true;
 }
 

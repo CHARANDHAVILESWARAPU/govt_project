@@ -298,3 +298,52 @@ window.togglePassword = togglePassword;
 window.showLoading = showLoading;
 window.hideLoading = hideLoading;
 window.showNotification = showNotification;
+
+// Carousel functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const indicators = document.querySelectorAll('.indicator');
+
+function showSlide(n) {
+    if (slides.length === 0) return;
+    
+    if (n >= slides.length) currentSlide = 0;
+    if (n < 0) currentSlide = slides.length - 1;
+    
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    
+    if (slides[currentSlide]) {
+        slides[currentSlide].classList.add('active');
+    }
+    if (indicators[currentSlide]) {
+        indicators[currentSlide].classList.add('active');
+    }
+}
+
+function changeSlide(n) {
+    currentSlide += n;
+    showSlide(currentSlide);
+}
+
+function currentSlideFunc(n) {
+    currentSlide = n - 1;
+    showSlide(currentSlide);
+}
+
+// Auto-advance carousel
+function autoAdvanceCarousel() {
+    if (slides.length > 0) {
+        currentSlide++;
+        showSlide(currentSlide);
+    }
+}
+
+// Start auto-advance if carousel exists
+if (slides.length > 0) {
+    setInterval(autoAdvanceCarousel, 5000); // Change slide every 5 seconds
+}
+
+// Export carousel functions
+window.changeSlide = changeSlide;
+window.currentSlide = currentSlideFunc;
