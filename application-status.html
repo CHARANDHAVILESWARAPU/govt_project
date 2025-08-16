@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Status - Government Housing Portal</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="https://res.cloudinary.com/di1wvorf2/image/upload/v1750929050/download_musxay.png" alt="AP Logo" class="nav-logo">
+                <div class="brand-text">
+                    <h2>Housing Portal</h2>
+                    <span>Government of Andhra Pradesh</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="about.html" class="nav-link">
+                    <i class="fas fa-info-circle"></i> About Us
+                </a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active">
+                        <i class="fas fa-cogs"></i> Services <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="new-registration.html">New Registration</a>
+                        <a href="application-status.html" class="active">Application Status</a>
+                        <a href="eligibility.html">Eligibility Criteria</a>
+                        <a href="download-form.html">Download Application Form</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">
+                    <i class="fas fa-phone"></i> Contact Us
+                </a>
+                <a href="portal-login.html" class="nav-link">
+                    <i class="fas fa-sign-in-alt"></i> Portal Login
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Application Status Section -->
+    <section class="status-section">
+        <div class="container">
+            <div class="status-header">
+                <i class="fas fa-search status-icon"></i>
+                <h1>Check Application Status</h1>
+                <p>Track your housing application status using your details</p>
+            </div>
+
+            <div class="status-form-container">
+                <div class="status-methods">
+                    <div class="method-tabs">
+                        <button class="method-tab active" onclick="switchMethod('phone')">
+                            <i class="fas fa-mobile-alt"></i>
+                            Phone + OTP
+                        </button>
+                        <button class="method-tab" onclick="switchMethod('transaction')">
+                            <i class="fas fa-receipt"></i>
+                            Transaction Number
+                        </button>
+                    </div>
+
+                    <!-- Phone + OTP Method -->
+                    <div id="phoneMethod" class="method-form active">
+                        <form id="phoneStatusForm" class="status-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullName">
+                                        <i class="fas fa-user"></i> Full Name
+                                    </label>
+                                    <input type="text" id="fullName" name="fullName" required>
+                                    <span class="error-message" id="fullNameError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phoneNumber">
+                                        <i class="fas fa-phone"></i> Phone Number
+                                    </label>
+                                    <input type="tel" id="phoneNumber" name="phoneNumber" maxlength="10" required>
+                                    <span class="error-message" id="phoneError"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="district">
+                                        <i class="fas fa-map-marker-alt"></i> District
+                                    </label>
+                                    <select id="district" name="district" required>
+                                        <option value="">Select District</option>
+                                        <option value="Anantapur">Anantapur</option>
+                                        <option value="Chittoor">Chittoor</option>
+                                        <option value="East Godavari">East Godavari</option>
+                                        <option value="Guntur">Guntur</option>
+                                        <option value="Krishna">Krishna</option>
+                                        <option value="Kurnool">Kurnool</option>
+                                        <option value="Nellore">Nellore</option>
+                                        <option value="Prakasam">Prakasam</option>
+                                        <option value="Srikakulam">Srikakulam</option>
+                                        <option value="Visakhapatnam">Visakhapatnam</option>
+                                        <option value="Vizianagaram">Vizianagaram</option>
+                                        <option value="West Godavari">West Godavari</option>
+                                        <option value="YSR Kadapa">YSR Kadapa</option>
+                                    </select>
+                                    <span class="error-message" id="districtError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pincode">
+                                        <i class="fas fa-map-pin"></i> Pincode
+                                    </label>
+                                    <input type="text" id="pincode" name="pincode" maxlength="6" required>
+                                    <span class="error-message" id="pincodeError"></span>
+                                </div>
+                            </div>
+
+                            <!-- OTP Section -->
+                            <div class="form-group otp-section" id="otpSection" style="display: none;">
+                                <label for="otp">
+                                    <i class="fas fa-mobile-alt"></i> OTP Verification
+                                </label>
+                                <input type="text" id="otp" name="otp" maxlength="6" placeholder="Enter 6-digit OTP">
+                                <button type="button" id="resendOtp" class="btn-secondary">Resend OTP</button>
+                                <span class="error-message" id="otpError"></span>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" id="sendOtpBtn" class="btn-secondary">Send OTP</button>
+                                <button type="submit" id="checkStatusBtn" class="btn-primary" disabled>Check Status</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Transaction Number Method -->
+                    <div id="transactionMethod" class="method-form">
+                        <form id="transactionStatusForm" class="status-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="transactionId">
+                                        <i class="fas fa-receipt"></i> Transaction Number
+                                    </label>
+                                    <input type="text" id="transactionId" name="transactionId" placeholder="Enter Transaction ID" required>
+                                    <span class="error-message" id="transactionError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fullNameTxn">
+                                        <i class="fas fa-user"></i> Full Name
+                                    </label>
+                                    <input type="text" id="fullNameTxn" name="fullNameTxn" required>
+                                    <span class="error-message" id="fullNameTxnError"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="districtTxn">
+                                        <i class="fas fa-map-marker-alt"></i> District
+                                    </label>
+                                    <select id="districtTxn" name="districtTxn" required>
+                                        <option value="">Select District</option>
+                                        <option value="Anantapur">Anantapur</option>
+                                        <option value="Chittoor">Chittoor</option>
+                                        <option value="East Godavari">East Godavari</option>
+                                        <option value="Guntur">Guntur</option>
+                                        <option value="Krishna">Krishna</option>
+                                        <option value="Kurnool">Kurnool</option>
+                                        <option value="Nellore">Nellore</option>
+                                        <option value="Prakasam">Prakasam</option>
+                                        <option value="Srikakulam">Srikakulam</option>
+                                        <option value="Visakhapatnam">Visakhapatnam</option>
+                                        <option value="Vizianagaram">Vizianagaram</option>
+                                        <option value="West Godavari">West Godavari</option>
+                                        <option value="YSR Kadapa">YSR Kadapa</option>
+                                    </select>
+                                    <span class="error-message" id="districtTxnError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pincodeTxn">
+                                        <i class="fas fa-map-pin"></i> Pincode
+                                    </label>
+                                    <input type="text" id="pincodeTxn" name="pincodeTxn" maxlength="6" required>
+                                    <span class="error-message" id="pincodeTxnError"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Check Status</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Result -->
+            <div id="statusResult" class="status-result" style="display: none;">
+                <div class="result-card">
+                    <div class="result-header">
+                        <i class="fas fa-info-circle result-icon"></i>
+                        <h3>Application Status</h3>
+                    </div>
+                    <div class="result-content">
+                        <div class="status-timeline">
+                            <div class="timeline-item completed">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Application Submitted</h4>
+                                    <p id="submittedDate">-</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" id="paymentTimeline">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Payment Completed</h4>
+                                    <p id="paymentDate">-</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" id="reviewTimeline">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Under Review</h4>
+                                    <p id="reviewDate">-</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" id="approvalTimeline">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-thumbs-up"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Approved</h4>
+                                    <p id="approvalDate">-</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="application-details">
+                            <h4>Application Details</h4>
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <label>Application ID:</label>
+                                    <span id="applicationId">-</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Unique ID:</label>
+                                    <span id="uniqueId">-</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Current Status:</label>
+                                    <span id="currentStatus" class="status-badge">-</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Transaction ID:</label>
+                                    <span id="transactionIdResult">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bank Details Button (Only for Approved Applications) -->
+                        <div id="bankDetailsSection" class="bank-details-section" style="display: none;">
+                            <button onclick="window.location.href='bank-details.html'" class="btn-primary">
+                                <i class="fas fa-university"></i> Add Bank Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/application-status.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Application Form - Government Housing Portal</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="https://res.cloudinary.com/di1wvorf2/image/upload/v1750929050/download_musxay.png" alt="AP Logo" class="nav-logo">
+                <div class="brand-text">
+                    <h2>Housing Portal</h2>
+                    <span>Government of Andhra Pradesh</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="about.html" class="nav-link">
+                    <i class="fas fa-info-circle"></i> About Us
+                </a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active">
+                        <i class="fas fa-cogs"></i> Services <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="new-registration.html">New Registration</a>
+                        <a href="application-status.html">Application Status</a>
+                        <a href="eligibility.html">Eligibility Criteria</a>
+                        <a href="download-form.html" class="active">Download Application Form</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">
+                    <i class="fas fa-phone"></i> Contact Us
+                </a>
+                <a href="portal-login.html" class="nav-link">
+                    <i class="fas fa-sign-in-alt"></i> Portal Login
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Download Form Section -->
+    <section class="download-section">
+        <div class="container">
+            <div class="download-header">
+                <i class="fas fa-download download-icon"></i>
+                <h1>Download Application Form</h1>
+                <p>Download your housing application form after verification</p>
+            </div>
+
+            <div class="download-form-container">
+                <div class="form-header">
+                    <h2>Verification Required</h2>
+                    <p>Please verify your details to download the application form</p>
+                </div>
+
+                <form id="downloadForm" class="download-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="uniqueId">
+                                <i class="fas fa-id-badge"></i> Unique ID
+                            </label>
+                            <input type="text" id="uniqueId" name="uniqueId" placeholder="Enter your Unique ID" required>
+                            <span class="error-message" id="uniqueIdError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="aadharNumber">
+                                <i class="fas fa-id-card"></i> Aadhar Number
+                            </label>
+                            <input type="text" id="aadharNumber" name="aadharNumber" maxlength="14" placeholder="XXXX XXXX XXXX" required>
+                            <span class="error-message" id="aadharError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobileNumber">
+                            <i class="fas fa-mobile-alt"></i> Linked Mobile Number
+                        </label>
+                        <input type="tel" id="mobileNumber" name="mobileNumber" maxlength="10" placeholder="Enter registered mobile number" required>
+                        <span class="error-message" id="mobileError"></span>
+                    </div>
+
+                    <!-- OTP Section -->
+                    <div class="form-group otp-section" id="otpSection" style="display: none;">
+                        <label for="otp">
+                            <i class="fas fa-shield-alt"></i> OTP Verification
+                        </label>
+                        <input type="text" id="otp" name="otp" maxlength="6" placeholder="Enter 6-digit OTP">
+                        <button type="button" id="resendOtp" class="btn-secondary">Resend OTP</button>
+                        <span class="error-message" id="otpError"></span>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Available Documents</h3>
+                        <ul>
+                            <li><i class="fas fa-file-pdf"></i> Housing Application Form (PDF)</li>
+                            <li><i class="fas fa-file-alt"></i> Eligibility Certificate</li>
+                            <li><i class="fas fa-file-contract"></i> Terms and Conditions</li>
+                            <li><i class="fas fa-file-invoice"></i> Payment Receipt</li>
+                        </ul>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="verifyBtn" class="btn-secondary">Verify & Send OTP</button>
+                        <button type="submit" id="downloadBtn" class="btn-primary" disabled>
+                            <i class="fas fa-download"></i> Download Forms
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Download Success -->
+            <div id="downloadSuccess" class="download-success" style="display: none;">
+                <div class="success-card">
+                    <i class="fas fa-check-circle success-icon"></i>
+                    <h3>Verification Successful!</h3>
+                    <p>Your documents are ready for download</p>
+                    
+                    <div class="download-links">
+                        <a href="#" onclick="downloadDocument('application-form')" class="download-link">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Application Form</span>
+                            <small>PDF - 2.3 MB</small>
+                        </a>
+                        <a href="#" onclick="downloadDocument('eligibility-certificate')" class="download-link">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Eligibility Certificate</span>
+                            <small>PDF - 1.1 MB</small>
+                        </a>
+                        <a href="#" onclick="downloadDocument('payment-receipt')" class="download-link">
+                            <i class="fas fa-file-invoice"></i>
+                            <span>Payment Receipt</span>
+                            <small>PDF - 0.8 MB</small>
+                        </a>
+                        <a href="#" onclick="downloadDocument('terms-conditions')" class="download-link">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Terms & Conditions</span>
+                            <small>PDF - 1.5 MB</small>
+                        </a>
+                    </div>
+                    
+                    <button onclick="downloadAllDocuments()" class="btn-primary">
+                        <i class="fas fa-download"></i> Download All Documents
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/download-form.js"></script>
+</body>
+</html>

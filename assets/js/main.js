@@ -345,5 +345,56 @@ if (slides.length > 0) {
 }
 
 // Export carousel functions
-window.changeSlide = changeSlide;
-window.currentSlide = currentSlideFunc;
+// Modern Carousel functionality
+let carouselPosition = 0;
+const totalSlides = 7;
+
+function moveCarousel(direction) {
+    const track = document.getElementById('carouselTrack');
+    if (!track) return;
+    
+    carouselPosition += direction;
+    
+    if (carouselPosition >= totalSlides) {
+        carouselPosition = 0;
+    } else if (carouselPosition < 0) {
+        carouselPosition = totalSlides - 1;
+    }
+    
+    const translateX = -(carouselPosition * (100 / totalSlides));
+    track.style.transform = `translateX(${translateX}%)`;
+    track.style.transition = 'transform 0.5s ease';
+}
+
+// Touch/swipe functionality for mobile
+let startX = 0;
+let endX = 0;
+
+function handleTouchStart(e) {
+    startX = e.touches[0].clientX;
+}
+
+function handleTouchMove(e) {
+    endX = e.touches[0].clientX;
+}
+
+function handleTouchEnd() {
+    if (startX - endX > 50) {
+        moveCarousel(1); // Swipe left - next slide
+    } else if (endX - startX > 50) {
+        moveCarousel(-1); // Swipe right - previous slide
+    }
+}
+
+// Initialize touch events
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.hero-carousel-modern');
+    if (carousel) {
+        carousel.addEventListener('touchstart', handleTouchStart, { passive: true });
+        carousel.addEventListener('touchmove', handleTouchMove, { passive: true });
+        carousel.addEventListener('touchend', handleTouchEnd, { passive: true });
+    }
+});
+
+// Export carousel functions
+window.moveCarousel = moveCarousel;

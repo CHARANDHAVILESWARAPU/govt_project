@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Details - Government Housing Portal</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="https://res.cloudinary.com/di1wvorf2/image/upload/v1750929050/download_musxay.png" alt="AP Logo" class="nav-logo">
+                <div class="brand-text">
+                    <h2>Housing Portal</h2>
+                    <span>Government of Andhra Pradesh</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bank Details Section -->
+    <section class="bank-details-section">
+        <div class="container">
+            <div class="bank-header">
+                <i class="fas fa-university bank-icon"></i>
+                <h1>Secure Bank Details</h1>
+                <p>Provide your banking information for subsidy transfer</p>
+                <div class="security-notice">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>All banking information is encrypted with AES-256 security</span>
+                </div>
+            </div>
+
+            <div class="bank-form-container">
+                <div class="form-header">
+                    <h2>Banking Information</h2>
+                    <p>Please provide accurate banking details for subsidy transfer</p>
+                </div>
+
+                <form id="bankDetailsForm" class="bank-form">
+                    <div class="form-group">
+                        <label for="uniqueIdBank">
+                            <i class="fas fa-id-badge"></i> Unique ID
+                        </label>
+                        <input type="text" id="uniqueIdBank" name="uniqueIdBank" readonly>
+                        <span class="error-message" id="uniqueIdBankError"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bankName">
+                                <i class="fas fa-university"></i> Bank Name
+                            </label>
+                            <select id="bankName" name="bankName" required>
+                                <option value="">Select Bank</option>
+                                <option value="State Bank of India">State Bank of India</option>
+                                <option value="HDFC Bank">HDFC Bank</option>
+                                <option value="ICICI Bank">ICICI Bank</option>
+                                <option value="Axis Bank">Axis Bank</option>
+                                <option value="Punjab National Bank">Punjab National Bank</option>
+                                <option value="Bank of Baroda">Bank of Baroda</option>
+                                <option value="Canara Bank">Canara Bank</option>
+                                <option value="Union Bank of India">Union Bank of India</option>
+                                <option value="Indian Bank">Indian Bank</option>
+                                <option value="Central Bank of India">Central Bank of India</option>
+                            </select>
+                            <span class="error-message" id="bankNameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="ifscCode">
+                                <i class="fas fa-code"></i> IFSC Code
+                            </label>
+                            <input type="text" id="ifscCode" name="ifscCode" placeholder="e.g., SBIN0001234" required>
+                            <span class="error-message" id="ifscError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="branchName">
+                                <i class="fas fa-building"></i> Branch Name
+                            </label>
+                            <input type="text" id="branchName" name="branchName" placeholder="Enter branch name" required>
+                            <span class="error-message" id="branchError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="accountNumber">
+                                <i class="fas fa-credit-card"></i> Account Number
+                            </label>
+                            <input type="text" id="accountNumber" name="accountNumber" placeholder="Enter account number" required>
+                            <span class="error-message" id="accountError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="accountHolderName">
+                            <i class="fas fa-user"></i> Account Holder Full Name
+                        </label>
+                        <input type="text" id="accountHolderName" name="accountHolderName" placeholder="As per bank records" required>
+                        <span class="error-message" id="holderNameError"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="village">
+                                <i class="fas fa-home"></i> Village
+                            </label>
+                            <input type="text" id="village" name="village" placeholder="Enter village name" required>
+                            <span class="error-message" id="villageError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="districtBank">
+                                <i class="fas fa-map-marker-alt"></i> District
+                            </label>
+                            <select id="districtBank" name="districtBank" required>
+                                <option value="">Select District</option>
+                                <option value="Anantapur">Anantapur</option>
+                                <option value="Chittoor">Chittoor</option>
+                                <option value="East Godavari">East Godavari</option>
+                                <option value="Guntur">Guntur</option>
+                                <option value="Krishna">Krishna</option>
+                                <option value="Kurnool">Kurnool</option>
+                                <option value="Nellore">Nellore</option>
+                                <option value="Prakasam">Prakasam</option>
+                                <option value="Srikakulam">Srikakulam</option>
+                                <option value="Visakhapatnam">Visakhapatnam</option>
+                                <option value="Vizianagaram">Vizianagaram</option>
+                                <option value="West Godavari">West Godavari</option>
+                                <option value="YSR Kadapa">YSR Kadapa</option>
+                            </select>
+                            <span class="error-message" id="districtBankError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pincodeBank">
+                            <i class="fas fa-map-pin"></i> Pincode
+                        </label>
+                        <input type="text" id="pincodeBank" name="pincodeBank" maxlength="6" placeholder="Enter pincode" required>
+                        <span class="error-message" id="pincodeBankError"></span>
+                    </div>
+
+                    <div class="security-info">
+                        <h3>Security Information</h3>
+                        <div class="security-features">
+                            <div class="security-item">
+                                <i class="fas fa-lock"></i>
+                                <span>AES-256 Encryption</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Multi-layer Security</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-eye-slash"></i>
+                                <span>Data Privacy Protected</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-server"></i>
+                                <span>Secure Server Storage</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-shield-alt"></i> Submit Secure Details
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="bankSuccessModal" class="modal">
+        <div class="modal-content">
+            <div class="success-content">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h2>Bank Details Submitted Successfully!</h2>
+                <p>Your banking information has been securely encrypted and stored.</p>
+                
+                <div class="next-steps">
+                    <h3>What happens next?</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Your details will be verified by our team</li>
+                        <li><i class="fas fa-check"></i> Subsidy amount will be processed</li>
+                        <li><i class="fas fa-check"></i> You'll receive SMS notification upon transfer</li>
+                        <li><i class="fas fa-check"></i> Bank statement will reflect the credit</li>
+                    </ul>
+                </div>
+                
+                <div class="modal-actions">
+                    <button onclick="window.location.href='index.html'" class="btn-primary">
+                        <i class="fas fa-home"></i> Go to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/bank-details.js"></script>
+</body>
+</html>
